@@ -7,7 +7,6 @@ var node_modules = path.resolve(urlProject, 'node_modules');
 //console.log(111,__dirname);
 //console.log(222,urlProject);
 config = {
-    target: 'electron',
     entry: [
          "webpack-dev-server/client?http://0.0.0.0:8080",
         'webpack/hot/dev-server',
@@ -19,9 +18,7 @@ config = {
     },
     devtool: 'source-map',
     externals: {
-        "electron": "require('electron')",
-        "remote": "require('electron').remote",
-        "fs": "require('fs')"
+
     },
     output: {
         path: path.resolve(urlProject, 'app'),

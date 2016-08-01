@@ -10,7 +10,8 @@ class Loading extends React.Component {
     render() {
         return (
             <div>
-                loading
+                <div>3232</div>
+                loading1231
             </div>
         )
     }

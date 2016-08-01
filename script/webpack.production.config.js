@@ -15,13 +15,7 @@ config = {
         extensions: ['', '.js', '.ts', '.tsx']
     },
     externals:{
-        "shell": "require('shell')",
-        "remote": "require('electron').remote",
-        "electron": "require('electron')",
-        "child_process": "require('child_process')",
-        "fs": "require('fs')",
-        "os": "require('os')",
-        "net": "require('net')"
+        
     },
     output: {
         path: path.resolve(urlProject, 'app/public'),
