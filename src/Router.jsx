@@ -17,7 +17,7 @@ export class AppRouter extends React.Component {
             <div>
                 <Router history={hashHistory}>
                     <Route path="/">
-                        <IndexRoute component={Loading}/>
+                        <IndexRoute component={MainShell}/>
                         <Route path="main" component={MainShell}/>
                     </Route>
                 </Router>
