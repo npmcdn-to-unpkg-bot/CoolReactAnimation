@@ -27,10 +27,6 @@ config = {
     module: {
         loaders: [
             {
-                test: /\.tsx?$/,
-                loader: 'ts-loader'
-            },
-            {
                 test: /\.jsx?$/,
                 loaders: ['react-hot', 'babel?presets[]=es2015,presets[]=stage-0,presets[]=react'],
                 include: /src/,

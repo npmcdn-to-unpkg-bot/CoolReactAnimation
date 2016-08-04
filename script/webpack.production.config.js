@@ -5,7 +5,6 @@ var webpack = require("webpack");
 var urlProject = fs.realpathSync('./');
 //console.log("urlProject:",urlProject);
 var node_modules = path.resolve(urlProject, 'node_modules');
-
 config = {
     entry: {
         app: path.resolve(urlProject, 'src/Main.jsx'),
@@ -14,8 +13,8 @@ config = {
     resolve: {
         extensions: ['', '.js', '.ts', '.tsx']
     },
-    externals:{
-        
+    externals: {
+       
     },
     output: {
         path: path.resolve(urlProject, 'app/public'),
@@ -24,22 +23,19 @@ config = {
     module: {
         loaders: [
             {
-                test: /\.tsx?$/,
-                loader: 'ts-loader'
-            },
-            { test: /\.jsx?$/, loader: "babel",
+                test: /\.jsx?$/, loader: "babel",
                 include: /src/,
                 exclude: [node_modules],
                 query: {
-                    presets: ['es2015','stage-0','react']
+                    presets: ['es2015', 'stage-0', 'react']
                 }
             },
             {
                 test: /\.json$/,
                 loader: "json"
             },
-            { test: /\.css$/, loader: "style!css"},
-            { test: /\.scss$/, loader: "style!css!sass"},
+            { test: /\.css$/, loader: "style!css" },
+            { test: /\.scss$/, loader: "style!css!sass" },
             {
                 test: /css(\\|\/)[^\.]+\.(png|jpg)/,
                 loader: 'url-loader?limit=8192'
@@ -47,7 +43,12 @@ config = {
         ]
     },
     plugins: [
-        new webpack.optimize.CommonsChunkPlugin('vendors', 'vendors.js')
+        new webpack.optimize.CommonsChunkPlugin('vendors', 'vendors.js'),
+        new webpack.DefinePlugin({
+            "process.env": {
+                NODE_ENV: JSON.stringify("production")
+            }
+        })
     ]
 };
 
